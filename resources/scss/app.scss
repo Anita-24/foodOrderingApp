@@ -1,0 +1,324 @@
+@import "./_variables" ;
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
+
+
+body{
+    font-family:'Lato','sans-serif' ;
+    -webkit-font-smoothing : antialiased;
+    color : $dark;
+}
+
+nav li:last-child a{
+    &:hover{
+        background-color:$primary-hover;
+    }
+    background:$primary ;
+}
+
+nav li a {
+    transition: $smooth;
+    &:hover{
+        color:$primary;
+    }
+}
+
+section.hero{
+    background-color: $secondary;
+}
+
+.btn-primary{
+    &:hover{
+        background: $primary-hover;
+        transition: $smooth;
+    }
+    background:$primary ;
+}
+
+.size{
+    background-color: $secondary;
+}
+.add-to-cart{
+    &:hover{
+        background: $primary;
+        border-color: $pure;
+        color: $pure;
+        transition: $smooth;
+    }
+    &:focus {
+        outline: none;
+    }
+
+    border: 2px solid $primary;
+    color: $primary;
+}
+
+button {
+    &:focus{
+        outline: none;
+    }
+}
+
+section.cart{
+
+    background: $secondary;
+
+    .amount{
+        color: $primary;
+    }
+}
+
+section.login{
+    background: $secondary;
+    min-height: calc(100vh - 86px);
+
+    a{
+        color:$primary;
+        &:hover{
+            color:$primary-hover;
+        }
+    }
+}
+
+
+
+.noty_theme__mint{
+    border-radius: 50px !important;
+    padding-left: 8px !important;
+
+}
+
+.fas.fa-rupee-sign{
+    font-size: 13px;
+}
+
+a.link{
+    color: $primary;
+}
+
+
+
+section.status{
+    background: $secondary;
+    min-height:calc(100vh - 86px);
+
+}
+.status_box{
+    padding: 60px 0 0;
+    
+}
+.status_box ul li span{
+    position: relative;
+    padding-left: 20px;
+}
+//Dots
+.status_box ul li span:after{
+    content:"";
+    position : absolute;
+    top: 50%;
+    left :-10px;
+    background: $dark;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform : translateY(-5px);
+    box-shadow: 0 0 1px 10px $secondary;
+
+}
+
+//Icons
+.status_box ul{
+    margin-left: 84px;
+}
+.status_box ul li span:before{
+    font-family: "Line Awesome Free";
+    font-size: 46px;
+    font-weight: 600;
+    position: absolute;
+    left: -90px;
+    top: 50%;
+    transform : translateY(-50%);
+    color: inherit;
+
+}
+.status_box ul li:nth-child(1) span:before{
+    content:"\f46c";
+
+}
+
+.status_box ul li:nth-child(2) span:before{
+    content:"\f560";
+
+}
+.status_box ul li:nth-child(3) span:before{
+    content:"\f818";
+
+}.status_box ul li:nth-child(4) span:before{
+    content:"\f0d1";
+
+}.status_box ul li:nth-child(5) span:before{
+    content:"\f582";
+
+}
+
+//line
+.status_box ul li{
+    position: relative;
+}
+
+.status_box ul li:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left :-6px;
+    width: 2px;
+    height: 100%;
+    background: $dark;
+    margin-top: 10px;
+
+}
+
+//last dot
+.status_box ul li:nth-child(5) span:after{
+    box-shadow: 0 20px 1px 20px $secondary;
+}
+
+// Line
+.status_box ul li.step_completed:before {
+    background: $gray;
+}
+
+// dots
+.status_box ul li.step_completed span:after {
+    background: $gray;
+}
+
+// text
+.status_box ul li.step_completed span {
+    color: $gray;
+}
+
+// Current status
+.status_box ul li.current span {
+    color: $primary;
+}
+
+.status_box ul li.current span:after {
+    background: $primary;
+}
+
+.status_box ul li small {
+    float: right;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.fa-bars{
+    visibility: hidden;
+}
+
+
+//Media Queries
+    
+@media screen and (max-width:1060px){
+    .container{
+        max-width: 90%;
+    }
+    table{
+        display: block;
+        overflow-x:auto;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width:768px){
+    .status_box ul li span:before{
+        font-size: 34px;
+    }
+}
+
+
+@media screen and (max-width:640px){
+    #nav_bar{
+        display: none;
+    }
+    .fa-bars{
+        visibility: visible;
+    }
+}
+
+  // Responsive Navbar  
+.site_main_wrapper{
+    position: relative;
+}
+.fas{
+    font-size: 24px;
+
+}
+
+.hamburger{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index:11;
+}
+
+.mobile_nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:33;
+    background: $secondary;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    padding-top: 5rem;
+    transform: translateX(-100%);
+}
+.open{
+    transform: translateX(0);
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+.mobile_nav ul li a{
+    font-size: 1.5rem;
+}
+
+.close_button{
+    position: fixed;
+    top:30px;
+    right: 30px;
+
+}
+
+// stripe css
+.StripeElement {
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: auto;
+    height: 40px;
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
